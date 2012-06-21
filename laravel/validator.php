@@ -295,7 +295,7 @@ class Validator {
 	{
 		$other = $parameters[0];
 
-		return isset($this->attributes[$other]) and $value == $this->attributes[$other];
+		return array_key_exists($other, $this->attributes) and $value == $this->attributes[$other];
 	}
 
 	/**
@@ -310,7 +310,7 @@ class Validator {
 	{
 		$other = $parameters[0];
 
-		return isset($this->attributes[$other]) and $value != $this->attributes[$other];
+		return array_key_exists($other, $this->attributes) and $value != $this->attributes[$other];
 	}
 
 	/**
